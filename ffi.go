@@ -52,20 +52,19 @@ type Type struct {
 var (
 	Void Type = Type{&C.ffi_type_void, "void"}
 
-	UChar  Type = Type{&C.ffi_type_uchar, "unsigned char"}
-	UShort Type = Type{&C.ffi_type_ushort, "unsigned short"}
-	UInt   Type = Type{&C.ffi_type_uint, "unsigned int"}
-	ULong  Type = Type{&C.ffi_type_ulong, "unsigned long"}
+	Char  Type = Type{&(C.ffi_type_sint8), "char"}
+	UChar Type = Type{&(C.ffi_type_uint8), "unsigned char"}
+
+	Int  Type = Type{&(C.ffi_type_sint32), "int"}
+	UInt Type = Type{&(C.ffi_type_uint32), "unsigned int"}
+
+	Long  Type = Type{&(C.ffi_type_sint64), "long"}
+	ULong Type = Type{&(C.ffi_type_uint64), "unsigned long"}
 
 	UInt8  Type = Type{&C.ffi_type_uint8, "uint8_t"}
 	UInt16 Type = Type{&C.ffi_type_uint16, "uint16_t"}
 	UInt32 Type = Type{&C.ffi_type_uint32, "uint32_t"}
 	UInt64 Type = Type{&C.ffi_type_uint64, "uint64_t"}
-
-	Char  Type = Type{&C.ffi_type_schar, "char"}
-	Short Type = Type{&C.ffi_type_sshort, "short"}
-	Int   Type = Type{&C.ffi_type_sint, "int"}
-	Long  Type = Type{&C.ffi_type_slong, "long"}
 
 	Int8  Type = Type{&C.ffi_type_sint8, "int8_t"}
 	Int16 Type = Type{&C.ffi_type_sint16, "int16_t"}
